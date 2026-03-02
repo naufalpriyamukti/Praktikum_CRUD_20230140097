@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     private ValidationUtil validationUtil;
 
     @Override
-    public UserDto AddUser(UserAddRequest request) {
+    public UserDto addUser(UserAddRequest request) {
         validationUtil.validate(request);
 
         User saveUser = User.builder()
@@ -35,9 +35,7 @@ public class UserServiceImpl implements UserService {
 
         userRepository.save(saveUser);
 
-        UserDto userDto = UserMapper.MAPPER.toUserDtoData(saveUser);
-
-        return userDto;
+        return UserMapper.MAPPER.toUserDtoData(saveUser);
     }
 
     @Override
@@ -61,7 +59,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto UpdateUser(String id, UserAddRequest request) {
+    public UserDto updateUser(String id, UserAddRequest request) {
         validationUtil.validate(request);
 
         User existingUser = userRepository.findById(id)
@@ -79,7 +77,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void DeleteUser(String id) {
+    public void deleteUser(String id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("user not found"));
 

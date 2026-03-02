@@ -1,10 +1,8 @@
 package com.deploy.praktikum1.controller;
 
-package com.deploy.praktikum.controller;
-
-import com.deploy.praktikum.model.dto.UserAddRequest;
-import com.deploy.praktikum.model.dto.UserDto;
-import com.deploy.praktikum.service.UserService;
+import com.deploy.praktikum1.model.dto.UserAddRequest;
+import com.deploy.praktikum1.model.dto.UserDto;
+import com.deploy.praktikum1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
